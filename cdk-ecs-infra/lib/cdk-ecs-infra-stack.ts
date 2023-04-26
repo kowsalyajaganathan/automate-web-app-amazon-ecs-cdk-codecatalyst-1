@@ -36,6 +36,7 @@ export class CdkEcsInfraStack extends cdk.Stack {
     //Create ECS Task Definition
     const taskDefinition = new ecs.FargateTaskDefinition(this, 'Task', {
       taskRole: taskIamRole,
+      family : 'CdkEcsInfraStackTaskDef',
     });
 
     taskDefinition.addContainer('MyContainer', {
